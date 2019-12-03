@@ -1,0 +1,484 @@
+<div id="hc_richmedia">
+	<script type="text/javascript">
+		if(!window.jQuery || !window.$) {
+			document.write('\x3Cscript src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript">\x3C/script>');
+		}
+	</script>
+	<script type="text/javascript" src="mraid.js"></script>
+	<style type="text/css">
+	body {margin: 0 auto;}
+	#hc_richmedia {
+		position:relative;
+		width:300px;
+		margin:0 auto;
+	}
+	#hc_richmedia .hc_initial_view {
+		position:relative;
+		z-index:1;
+	}
+	#hc_richmedia .hc_content {
+		position:relative;
+		width:300px;
+		height:300px;
+		text-align:center;
+		z-index:1;
+		background: url("http://a.aug.me/augmeimg/31000/30737.png") no-repeat top left #02b2c6;
+		overflow: hidden;
+	}
+	#hc_richmedia .hc_closebtn {
+		position:absolute;
+		top:7px;
+		right:5px;
+		z-index:20;
+		cursor:pointer;
+	}
+	#hc_richmedia .hc_closebtn img {
+		position:relative;
+		z-index:20;
+	}
+	#hc_richmedia .hc_content h3 {
+		margin-top:0;
+	}
+	#hc_richmedia .hc_blockimg {
+		display:block;
+	}
+	a img {border: none;}
+	
+	/* custom styles */
+	
+	#hc_dispenser {
+  		border: 0 none;
+  		width: 126px;
+  		height: 138px;
+  		position: absolute;
+  		top: 6px;
+  		left: 8px;
+  		z-index: 7;
+	}
+	#hc_slurpee_stream {
+  		position: absolute;
+  		width: 31px;
+  		height: 98px;
+  		top: 40px;
+  		left: 61px;
+  		z-index: 6;
+  		background: no-repeat top left transparent;
+	}
+	#hc_cup {
+  		position: absolute;
+  		bottom: 0;
+  		width: 139px;
+  		height: 205px;
+  		left: 0;
+  		z-index: 10;
+	}
+	
+	#hc_cup_illusion {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 139px;
+		height: 205px;
+		z-index: 5;
+	}
+	
+	#hc_slurpee_top {
+  		position: absolute;
+  		background: no-repeat top left transparent;
+  		height: 205px;
+  		width: 139px;
+  		left: 0;
+  		top: 180px;
+  		z-index: 8;
+	}
+	
+	#hc_introscreen,
+	#hc_finalscreen {
+		width: 170px;
+		height: 294px;
+		position: absolute;
+		right: 0px;
+		top: 6px;
+		z-index: 15;
+	}
+	
+	.swipe_text {
+		display: block;
+		padding: 12px 0;
+		height: 25px;
+	}
+	
+	.flavor_logo {
+		display: block;
+  		background-position: top center;
+  		background-repeat: no-repeat;
+  		height: 87px;
+  		width: 170px;
+	}
+	
+	.flavor_legaltext {
+		position: absolute;
+		bottom: 5px;
+		right: 5px;
+		display: block;
+  		background-position: bottom right;
+  		background-repeat: no-repeat;
+  		height: 55px;
+  		width: 178px;
+  		z-index: 15;
+	}
+	
+	.tryflavor_text {
+		height: 49px;
+		padding: 0;
+		display: block;
+		width: 132px;
+		margin: 0 auto;
+	}
+	
+	#hc_finalscreen .tryflavor_text {
+		padding: 12px 0;
+		height: 74px;
+	}
+	
+	.social_links {
+		position: absolute;
+		bottom: 5px;
+		right: 5px;
+		display: block;
+		background: url("http://a.aug.me/augmeimg/31000/30975.png") no-repeat bottom right transparent;
+		height: 75px; 
+		width: 170px;
+	}
+	
+	.social_links .hc_ci {
+		position: relative;
+		right: 40px;
+		z-index: 20;
+	}
+	
+	.storeloc_btn a {
+		position: relative;
+		z-index: 20;
+	}
+	
+	#hc_splash {
+		position: relative; 
+		z-index: 30;
+	}
+		
+	</style>
+	
+	<div class="hc_initial_view">		
+		<a href="#" id="hc_expand" onclick="jQuery.hc_rm.expand(event); return false;">		
+			<img class="hc_banner hc_blockimg" src="http://a.aug.me/augmeimg/31000/30987.png" style="width:300px;height:50px;" />
+		</a>	
+	</div><!-- end initial view content -->
+	
+	<div class="hc_content" id="hc_content" style="display:none;">
+	
+		<div class="hc_closebtn" id="hc_closebtn" style="display:none;" onclick="jQuery.hc_rm.collapse(event); return false;">
+			<img src="http://a.aug.me/augmeimg/31000/30567.png" />
+		</div>	
+		
+		<div id="hc_splash">
+			<img src="http://a.aug.me/augmeimg/31000/30733.png" alt="Swipe down to fill cup! Slurpee Lite" />
+		</div>
+	
+		<div id="hc_container">
+			<div id="hc_dispenser"></div>
+			<div id="hc_slurpee_stream"></div>
+			<div id="hc_cup_illusion"><img src="http://a.aug.me/augmeimg/31000/30732.png" /></div>
+			<div id="hc_slurpee_top"></div>
+			<div id="hc_cup"><img src="http://a.aug.me/augmeimg/31000/30727.png" /></div>
+		</div>
+		
+		<div id="hc_introscreen">
+			<img class="slurpeelite_logo" src="http://a.aug.me/augmeimg/31000/30738.png" alt="Slurpee Lite" />
+			<img class="swipe_text" src="http://a.aug.me/augmeimg/31000/30744.png" alt="Swipe to select flavor" />
+			<img class="tryflavor_text" src="http://a.aug.me/augmeimg/31000/30746.png" alt="Try the new sugar-free..." />
+			<div class="flavor_logo"></div>
+			<div class="flavor_legaltext"></div>
+		</div>
+		
+		<div id="hc_finalscreen" style="display:none;">
+			<img class="slurpeelite_logo" src="http://a.aug.me/augmeimg/31000/30738.png" alt="Slurpee Lite" />
+			<img class="tryflavor_text" src="http://a.aug.me/augmeimg/31000/30748.png" alt="Try the new sugar-free flavors." />
+			<div class="storeloc_btn">
+				<a href="http://www.slurpee.mobi/locator/" class="hc_ci" data-tracking="stores"><img src="http://a.aug.me/augmeimg/31000/30980.png" alt="Store Locator" /></a>
+			</div>
+			<!--<div class="social_links">
+				<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSlurpee&amp;send=false&amp;layout=button_count&amp;width=95&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:95px; height:21px;" allowTransparency="true"></iframe>
+			</div>-->
+		</div>
+		
+	</div><!-- end reveal content -->
+
+	<script type="text/javascript">
+		
+		/* DO NOT USE slashes for comments. */
+		/* use .toggle to reveal from left to right, down */
+		/* use .slideToggle to reveal from top to bottom */
+		/* any closing html tags must have the forward slash escaped,e.g. <\/div> */
+	
+		(function ($) {		
+			
+			var fifheight;
+					
+			$.hc_rm = {
+				getQP: function (p) {
+					if(window.location && typeof window.location.search === "string") {
+						var qArray = window.location.search.substr(1).split("&"),qParam,i;
+						for(i=0; i<qArray.length; i++) {
+							qParam = qArray[i].split("=");
+							if(qParam.length === 2 && qParam[0] === p) {
+								return unescape(qParam[1]);
+							}
+						}
+					}
+					return false;
+				},
+				/*getSQP: function(p) {
+					var scriptSrc = $("script[src*='as.aug.me']").attr('src');
+					var tmp = scriptSrc.split("?");
+					if(tmp.length > 1) {
+						var qArray = tmp[1].split("&"),qParam,i;
+						for(i=0; i<qArray.length; i++) {
+							qParam = qArray[i].split("=");
+							if(qParam.length === 2 && qParam[0] === p) {
+								return unescape(qParam[1]);
+							}
+						}
+					}
+					return false;
+				},*/
+				expand: function (e) {				
+					if (!e) { e = window.event; }
+					e.cancelBubble = true;
+					if (e.stopPropagation) e.stopPropagation();	
+					/* FIF support */
+					if(window.inDapIF === true) {
+						$("iframe",parent.document).each(function(iel, el){
+							if(el.contentWindow === window) {
+								fifheight = $(el).css("height");
+								$(el).css("height","300px");
+								return false;
+							}
+						});
+					}				
+					/* mraid function call */
+					if(typeof mraid !== "undefined") {
+						mraid.useCustomClose(true);
+						mraid.expand();
+					}					
+					/* animations for expand */
+					$("#hc_richmedia .hc_initial_view").hide();
+					$("#hc_richmedia .hc_content").show();
+					$("#hc_richmedia .hc_closebtn").show();
+					$("#hc_richmedia #hc_splash").delay(1500).fadeOut(400);
+					
+					/* Hip expansion tracking */				
+					$("#hc_richmedia").append('<img src="#trk:expansion#?cb='+new Date().getTime()+'" style="position:absolute;height:1px;width:1px;" />');	
+					
+					/* 3rd party expansion tracker */
+     				/*if(this.getSQP('exp') !== false) {
+     					$("#hc_richmedia").append('<img src="'+decodeURIComponent(this.getSQP('exp'))+'&cb='+new Date().getTime()+'" style="position:absolute;height:1px;width:1px;" />');
+     				}*/
+     								
+					return false;
+				},
+				collapse: function(e) {
+					if (!e) { e = window.event; }
+					e.cancelBubble = true;
+					if (e.stopPropagation) e.stopPropagation();	
+					/* FIF support */
+					if(window.inDapIF === true) {
+						$("iframe",parent.document).each(function(iel, el){
+							if(el.contentWindow === window) {
+								$(el).css("height",fifheight);
+								return false;
+							}
+						});
+					}				
+					/* mraid function call */
+					if(typeof mraid !== "undefined") {
+						mraid.close();
+					}					
+					/* animations for collapse */
+					$("#hc_richmedia .hc_initial_view").show();
+					$("#hc_richmedia .hc_content").hide();
+					$("#hc_richmedia .hc_closebtn").hide();					
+					$("#hc_richmedia").append('<img src="#trk:collapse#?cb='+new Date().getTime()+'" style="position:absolute;height:1px;width:1px;" />');						
+					return false;													
+				},
+				engage: function(e) {
+					if (!e) { e = window.event; }
+					e.cancelBubble = true;
+					if (e.stopPropagation) e.stopPropagation();
+					$("#hc_richmedia").append('<img src="#trk:engage#?cb='+new Date().getTime()+'" style="position:absolute;height:1px;width:1px;" />');
+					return false;
+				}
+				
+			};
+			
+			/* Begin Slurpee Game */
+			
+  			var swiping = false,
+      		start_x,
+      		start_y,
+      		end_x,
+      		end_y,
+      		flavors = ['sprite','mango','sprite','mango'],
+      		flavor_pointer = 0;
+  
+  			function swap_flavor(direction) {
+  				$("#hc_slurpee_stream").fadeOut(200);
+  				$(".flavor_logo").fadeOut(400);
+  				$(".flavor_legaltext").fadeOut(400);
+    			$("#hc_dispenser").fadeOut(400, function () {
+      				if (direction === "left") {
+        				flavor_pointer = (flavor_pointer + 3) % 4;
+        				$(this).css("left", "+=300px").show().animate({"left": "-=300px"}, 400);
+      				} else {
+        				flavor_pointer = (flavor_pointer + 1) % 4;
+        				$(this).css("left", "-=300px").show().animate({"left": "+=300px"}, 400);
+      				}
+      				
+      				if ((flavor_pointer == 0) || (flavor_pointer == 2)) {
+      					$(this).css('background-image', 'url(http://a.aug.me/augmeimg/31000/30739.png)');
+      					$(".flavor_logo").css("background-image", "url(http://a.aug.me/augmeimg/31000/30986.png)").fadeIn(400);
+      					$(".flavor_legaltext").css("background-image", "url(http://a.aug.me/augmeimg/31000/30985.png)").fadeIn(400);
+      				}
+      				
+      				if ((flavor_pointer == 1) || (flavor_pointer == 3)) {
+      					$(this).css('background-image', 'url(http://a.aug.me/augmeimg/31000/30734.png)');
+      					$(".flavor_logo").css("background-image", "url(http://a.aug.me/augmeimg/31000/30984.png)").fadeIn(400);
+      					$(".flavor_legaltext").css("background-image", "url(http://a.aug.me/augmeimg/31000/30983.png)").fadeIn(400);
+      				}
+      				
+      				$("#hc_slurpee_stream").fadeIn(1000);
+    			});
+  			}
+  
+  			function dispense() {
+  				if (!$("#hc_cup").hasClass("full")) {
+  					$("#hc_richmedia").append('<img src="#trk:cup_fill#?cb='+new Date().getTime()+'" style="position:absolute;height:1px;width:1px;" />');
+  					if ((flavor_pointer == 0) || (flavor_pointer == 2)) {
+    					$("#hc_slurpee_stream").css("background-image", "url(http://a.aug.me/augmeimg/31000/30740.png)").animate({"top": "+=70px"}, 1200, function () {
+      						$("#hc_slurpee_top").css("background-image", "url(http://a.aug.me/augmeimg/31000/30731.png)").delay(1600).animate({"top": "-=85px"}, 800);
+    					});
+    				}
+
+  					if ((flavor_pointer == 1) || (flavor_pointer == 3)) {
+    					$("#hc_slurpee_stream").css("background-image", "url(http://a.aug.me/augmeimg/31000/30735.png)").animate({"top": "+=70px"}, 1200, function () {
+      						$("#hc_slurpee_top").css("background-image", "url(http://a.aug.me/augmeimg/31000/30730.png)").delay(1600).animate({"top": "-=85px"}, 800);
+    					});
+    				}
+    			
+    				$("#hc_cup").addClass("full");
+    				
+    				endSlurpee();
+    			} else {
+    				e.preventDefault();
+    				e.stopPropagation();
+    			}
+  			}
+  			
+  			function endSlurpee() {
+  				$("#hc_introscreen").delay(4500).fadeOut(500);
+  				$("#hc_finalscreen").delay(5000).fadeIn(500);
+  			}
+  
+  			$("#hc_dispenser").css("background-image", "url(http://a.aug.me/augmeimg/31000/30739.png)");
+  			$("#hc_slurpee_stream").css("background-image", "url(http://a.aug.me/augmeimg/31000/30740.png)");
+  			$("#hc_slurpee_top").css("background-image", "url(http://a.aug.me/augmeimg/31000/30731.png)");
+  			$(".flavor_logo").css("background-image", "url(http://a.aug.me/augmeimg/31000/30986.png)");
+  			$(".flavor_legaltext").css("background-image", "url(http://a.aug.me/augmeimg/31000/30985.png)");
+
+  
+  			$("#hc_container, .swipe_text")
+    		.bind("touchstart mousedown", function (e) {
+      			e.preventDefault();
+      			e.stopPropagation();
+      
+      			swiping = true;
+      			if (e.originalEvent.touches) {
+        			start_x = e.originalEvent.touches[0].pageX;
+        			start_y = e.originalEvent.touches[0].pageY;
+      			} else {
+        			start_x = e.originalEvent.clientX;
+        			start_y = e.originalEvent.clientY;
+      			}
+        
+    		})
+    		.bind("touchmove mousemove", function (e) {
+      			if (swiping) {
+        			if (e.originalEvent.touches) {
+          				end_x = e.originalEvent.touches[0].pageX;
+          				end_y = e.originalEvent.touches[0].pageY;
+        			} else {
+          				end_x = e.originalEvent.clientX;
+          				end_y = e.originalEvent.clientY;
+        			}      
+      			}
+    		})
+    		.bind("touchend mouseup", function (e) {
+      			e.preventDefault();
+      			e.stopPropagation();
+      			      
+      			if (swiping) {
+        			swiping = false;
+        
+        			/* detect swipes: left, right, and down */
+        			if (end_y - start_y > 20) {
+          				/* swipe down; dispense slurpee */
+          				dispense();
+        			} else if (end_x - start_x > 20) {
+          				/* swipe right; toggle flavor right */
+          				swap_flavor("right");
+        			} else if (start_x - end_x > 20) {
+          				/* swipe left; toggle flavor left */
+          				swap_flavor("left");
+        			}
+        			
+      			}
+    		});
+					
+		}(jQuery));
+		
+		$( document ).ready(function() {
+			$('.hc_ci').click(function(e){
+				e.preventDefault();
+				e.stopPropagation();
+				var track = $(this).data('tracking');
+				var url = $(this).attr('href');
+				var img = new Image();
+				img.onload = function() {
+      				window.location = url;
+				};
+				img.src = '#trk:x_'+track+'#?cb='+new Date().getTime();
+			});
+		});
+		
+		/* Add mraid lister */
+		if(typeof mraid !== "undefined") {
+			mraid.addEventListener("stateChange", handleStateChanges);
+		}
+		
+		/* Mraid Handle State Change */
+		function handleStateChanges() {
+
+			switch(mraid.getState()) {
+				case "expanded":
+					jQuery.hc_rm.expand();
+					break;
+				case "default":
+					jQuery.hc_rm.collapse();
+					break;
+			}
+			
+		}
+	
+	</script>
+	
+</div><!-- end required wrapper -->
